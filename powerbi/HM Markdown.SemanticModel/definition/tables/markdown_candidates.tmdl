@@ -1,0 +1,259 @@
+table markdown_candidates
+	lineageTag: c513da68-dcbf-4baf-b8d3-a96151a2570a
+
+	measure 'Live Full-Price Lines' = COUNTROWS ( markdown_candidates )
+		formatString: #,0
+		displayFolder: Measures
+		lineageTag: 5676f532-8874-409c-bcf2-b8bd079e6b38
+
+	measure 'Candidates' = CALCULATE ( COUNTROWS ( markdown_candidates ), markdown_candidates[is_candidate] = TRUE () )
+		formatString: #,0
+		displayFolder: Measures
+		lineageTag: 7ab1510c-a35e-4c3d-85c8-3b1a237b77b1
+
+	measure 'Candidates % of Range' = DIVIDE ( [Candidates], [Live Full-Price Lines] )
+		formatString: 0%
+		displayFolder: Measures
+		lineageTag: ea7c0582-fc58-4a31-bb6e-93f3a5d5f605
+
+	measure 'Candidates % of Revenue' =
+			DIVIDE (
+			    CALCULATE ( SUM ( markdown_candidates[revenue_now_wk] ), markdown_candidates[is_candidate] = TRUE () ),
+			    SUM ( markdown_candidates[revenue_now_wk] )
+			)
+		formatString: 0%
+		displayFolder: Measures
+		lineageTag: 928f17cb-00d0-4859-9790-e54fc1207131
+
+	measure 'Expected Extra Units (4 wks)' =
+			SUMX (
+			    FILTER ( markdown_candidates, markdown_candidates[is_candidate] = TRUE () ),
+			    markdown_candidates[ros_now] * 4 * ( markdown_candidates[expected_unit_lift] - 1 )
+			)
+		formatString: #,0
+		displayFolder: Measures
+		lineageTag: f5cb483e-7439-48e5-997c-e5106f6a96c1
+
+	measure 'Recommended Depth' = SELECTEDVALUE ( markdown_candidates[recommended_depth], "Varies" )
+		formatString: General
+		displayFolder: Measures
+		lineageTag: 13066755-bb1e-4376-9773-4705ac613e0d
+
+	column article_id
+		dataType: string
+		lineageTag: e2d170c0-7200-4369-8aec-c0f7c644cb08
+		summarizeBy: none
+		sourceColumn: article_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod_name
+		dataType: string
+		lineageTag: c70894ae-0700-4a3a-b2b8-14b5165fa466
+		summarizeBy: none
+		sourceColumn: prod_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_type_name
+		dataType: string
+		lineageTag: 358c3971-db20-4839-b2be-6bf3145f29de
+		summarizeBy: none
+		sourceColumn: product_type_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_group_name
+		dataType: string
+		lineageTag: 270b6ec1-5e7f-4692-a310-d749385204ff
+		summarizeBy: none
+		sourceColumn: product_group_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column index_group_name
+		dataType: string
+		lineageTag: 1a44af5d-8c8e-4282-8e46-9cad95806b45
+		summarizeBy: none
+		sourceColumn: index_group_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column department_name
+		dataType: string
+		lineageTag: 284adc60-a728-4a0c-9b69-f15d1c66c124
+		summarizeBy: none
+		sourceColumn: department_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column colour_group_name
+		dataType: string
+		lineageTag: 159ddf74-ac30-48d6-a647-ea4ef642af67
+		summarizeBy: none
+		sourceColumn: colour_group_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column launch_week
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 21af1924-437f-4c6f-a057-f8ca82088730
+		summarizeBy: none
+		sourceColumn: launch_week
+
+		variation Variation
+			isDefault
+			relationship: cadd4469-5670-4719-bbd9-df4a319d67fc
+			defaultHierarchy: LocalDateTable_2632631a-abca-43f7-a8de-ec052b8fa2fb.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column weeks_on_sale
+		dataType: int64
+		formatString: 0
+		lineageTag: 344c566b-14cb-436a-9fd2-026af2331146
+		summarizeBy: none
+		sourceColumn: weeks_on_sale
+
+		annotation SummarizationSetBy = User
+
+	column price_vs_full
+		dataType: double
+		formatString: 0%
+		lineageTag: 2e20e7b6-7c12-4b96-8f6b-666ef43c0c60
+		summarizeBy: none
+		sourceColumn: price_vs_full
+
+		annotation SummarizationSetBy = User
+
+	column ros_now
+		dataType: double
+		formatString: 0.0
+		lineageTag: 904df623-6c7e-48af-8d61-06491dde7bd6
+		summarizeBy: none
+		sourceColumn: ros_now
+
+		annotation SummarizationSetBy = User
+
+	column ros_prior
+		dataType: double
+		formatString: 0.0
+		lineageTag: 952ce617-1ad4-4686-bd6e-f3de11ca3373
+		summarizeBy: none
+		sourceColumn: ros_prior
+
+		annotation SummarizationSetBy = User
+
+	column units_last_4wk
+		dataType: int64
+		formatString: 0
+		lineageTag: 41510543-78b6-43ef-b825-b2596878bfab
+		summarizeBy: none
+		sourceColumn: units_last_4wk
+
+		annotation SummarizationSetBy = User
+
+	column trend_label
+		dataType: string
+		lineageTag: b9151e84-5749-4c68-a05b-bd7ed34f6530
+		summarizeBy: none
+		sourceColumn: trend_label
+
+		annotation SummarizationSetBy = Automatic
+
+	column ros_trend
+		dataType: double
+		formatString: "+0%;-0%;0%"
+		lineageTag: 5b0bf7b4-f625-4962-be27-1d6c48e02e86
+		summarizeBy: none
+		sourceColumn: ros_trend
+
+		annotation SummarizationSetBy = User
+
+	column peer_median_ros
+		dataType: double
+		formatString: 0.0
+		lineageTag: d8d2f6d7-79ab-41f3-9418-bdf347c5e954
+		summarizeBy: none
+		sourceColumn: peer_median_ros
+
+		annotation SummarizationSetBy = User
+
+	column peer_count
+		dataType: int64
+		formatString: 0
+		lineageTag: c6d2463b-e8d7-4434-82ec-5289b673a071
+		summarizeBy: none
+		sourceColumn: peer_count
+
+		annotation SummarizationSetBy = User
+
+	column ros_vs_peers
+		dataType: double
+		formatString: 0%
+		lineageTag: f621c8a0-2a20-4c36-9e75-00ebf973d02f
+		summarizeBy: none
+		sourceColumn: ros_vs_peers
+
+		annotation SummarizationSetBy = User
+
+	column is_candidate
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3bc7ba3d-882e-49ed-a853-fb6251aecd11
+		summarizeBy: none
+		sourceColumn: is_candidate
+
+		annotation SummarizationSetBy = Automatic
+
+	column recommended_depth
+		dataType: string
+		lineageTag: 4312bad4-496f-452f-b9a1-5d1406283e9d
+		summarizeBy: none
+		sourceColumn: recommended_depth
+
+		annotation SummarizationSetBy = Automatic
+
+	column expected_unit_lift
+		dataType: double
+		formatString: "0.0""x"""
+		lineageTag: 0c6cd5f8-c9b3-4b91-8e3c-f4200652ee3b
+		summarizeBy: none
+		sourceColumn: expected_unit_lift
+
+		annotation SummarizationSetBy = User
+
+	column expected_revenue_change
+		dataType: double
+		formatString: 0.00
+		lineageTag: f0fb68c2-7ed9-441b-92c3-e4ef83a2f442
+		summarizeBy: none
+		sourceColumn: expected_revenue_change
+
+		annotation SummarizationSetBy = User
+
+	column revenue_now_wk
+		dataType: double
+		formatString: 0.00
+		lineageTag: 51076aab-d8c2-4305-951a-2a99537ccd62
+		summarizeBy: sum
+		sourceColumn: revenue_now_wk
+
+		annotation SummarizationSetBy = Automatic
+
+	partition markdown_candidates = m
+		mode: import
+		source =
+				let
+				    Source = GoogleBigQuery.Database([Implementation="2.0"]),
+				    #"data-portfolio-509915_Database" = Source{[Name="data-portfolio-509915",Kind="Database"]}[Data],
+				    hm_Schema = #"data-portfolio-509915_Database"{[Name="hm",Kind="Schema"]}[Data],
+				    markdown_candidates_Table = hm_Schema{[Name="markdown_candidates",Kind="Table"]}[Data]
+				in
+				    markdown_candidates_Table
+
+	annotation PBI_ResultType = Table
+

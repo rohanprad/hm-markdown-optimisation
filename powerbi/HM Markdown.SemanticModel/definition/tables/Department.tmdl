@@ -1,0 +1,22 @@
+table Department
+	lineageTag: b61f9021-1318-48b2-af1b-64f5a07edf20
+
+	column index_group_name
+		dataType: string
+		lineageTag: 90694e4d-bd18-4a17-9880-b290cd1a3bac
+		summarizeBy: none
+		sourceColumn: index_group_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Department = m
+		mode: import
+		source =
+				let
+				    // One row per department, taken from the weekly summary (which covers every department)
+				    Source = weekly_summary,
+				    Departments = Table.Distinct(Table.SelectColumns(Source, {"index_group_name"}))
+				in
+				    Departments
+
+	annotation PBI_ResultType = Table

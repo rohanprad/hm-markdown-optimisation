@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "depthSlicer",
+  "position": {
+    "x": 694,
+    "y": 96,
+    "z": 10000,
+    "height": 64,
+    "width": 220,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "markdown_candidates"
+                    }
+                  },
+                  "Property": "recommended_depth"
+                }
+              },
+              "queryRef": "markdown_candidates.recommended_depth",
+              "nativeQueryRef": "recommended_depth",
+              "displayName": "Suggested markdown"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "kpiPctRevenue",
+  "position": {
+    "x": 748,
+    "y": 96,
+    "z": 11000,
+    "height": 100,
+    "width": 247,
+    "tabOrder": 11000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "markdown_candidates"
+                    }
+                  },
+                  "Property": "Candidates % of Revenue"
+                }
+              },
+              "queryRef": "markdown_candidates.Candidates % of Revenue",
+              "nativeQueryRef": "Candidates % of Revenue",
+              "displayName": "Share of full-price revenue"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Share of full-price revenue that the markdown candidates bring in.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

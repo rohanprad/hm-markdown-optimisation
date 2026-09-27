@@ -1,0 +1,27 @@
+model Model
+	culture: en-IN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["markdown_candidates","markdown_effect","weekly_summary","Department"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table markdown_candidates
+ref table DateTableTemplate_217af96e-51f6-41b3-8205-12a44a2de80f
+ref table LocalDateTable_2632631a-abca-43f7-a8de-ec052b8fa2fb
+ref table markdown_effect
+ref table LocalDateTable_a6f1c776-71b9-4672-8a6a-2c32f63bb021
+ref table LocalDateTable_4e39d805-b21a-4b00-9101-39e95f17a19d
+ref table weekly_summary
+ref table Department
+ref table LocalDateTable_d15cd186-c973-469e-af3a-58ea3b57a77a
+
+ref cultureInfo en-IN
+

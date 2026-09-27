@@ -1,0 +1,32 @@
+relationship cadd4469-5670-4719-bbd9-df4a319d67fc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: markdown_candidates.launch_week
+	toColumn: LocalDateTable_2632631a-abca-43f7-a8de-ec052b8fa2fb.Date
+
+relationship eeedfc12-8baa-45e9-b70a-fff9a36a1255
+	joinOnDateBehavior: datePartOnly
+	fromColumn: markdown_effect.launch_week
+	toColumn: LocalDateTable_a6f1c776-71b9-4672-8a6a-2c32f63bb021.Date
+
+relationship 0ea9cca5-e3dd-420d-8d3b-fa594ec0166a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: markdown_effect.markdown_week
+	toColumn: LocalDateTable_4e39d805-b21a-4b00-9101-39e95f17a19d.Date
+
+relationship 23030901-df10-4f63-a678-5f8b7ffd7a4a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: weekly_summary.week_start
+	toColumn: LocalDateTable_d15cd186-c973-469e-af3a-58ea3b57a77a.Date
+
+relationship af93d08d-47d7-46c5-8b6c-d10010919a90
+	fromColumn: markdown_candidates.index_group_name
+	toColumn: Department.index_group_name
+
+relationship bece61ab-23e8-4fb4-bd93-2c2c39fb0615
+	fromColumn: markdown_effect.index_group_name
+	toColumn: Department.index_group_name
+
+relationship 92617ea4-32e9-4d25-ae79-5db57775e7a6
+	fromColumn: weekly_summary.index_group_name
+	toColumn: Department.index_group_name
+

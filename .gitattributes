@@ -1,0 +1,4 @@
+# Count SQL in GitHub's language bar (it's excluded by default)
+*.sql linguist-detectable=true
+# Power BI definition files are generated, not hand-written code
+powerbi/** linguist-generated=true

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "kpiGrew",
+  "position": {
+    "x": 573,
+    "y": 96,
+    "z": 10000,
+    "height": 100,
+    "width": 335,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "markdown_effect"
+                    }
+                  },
+                  "Property": "% Markdowns Grew Revenue"
+                }
+              },
+              "queryRef": "markdown_effect.% Markdowns Grew Revenue",
+              "nativeQueryRef": "% Markdowns Grew Revenue",
+              "displayName": "Markdowns that grew revenue"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Share of past markdowns that grew revenue compared with similar full-price products.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

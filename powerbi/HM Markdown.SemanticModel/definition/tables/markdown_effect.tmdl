@@ -1,0 +1,203 @@
+table markdown_effect
+	lineageTag: 84498cf6-912f-4335-90e0-ca006451fb7c
+
+	measure 'Markdowns Analysed' = COUNTROWS ( markdown_effect )
+		formatString: #,0
+		displayFolder: Measures
+		lineageTag: 2ac5152b-31e3-4ae0-bb3c-74bafdaf5b3d
+
+	measure 'Median Unit Lift' = MEDIAN ( markdown_effect[adjusted_unit_lift] )
+		formatString: "0.0""x"""
+		displayFolder: Measures
+		lineageTag: 46404f31-d970-427d-82d3-8e13f424febd
+
+	measure 'Median Revenue Change %' = MEDIAN ( markdown_effect[adjusted_revenue_change] ) - 1
+		formatString: "+0%;-0%;0%"
+		displayFolder: Measures
+		lineageTag: caff8057-29ee-44a2-8be7-324dbf1fb13e
+
+	measure '% Markdowns Grew Revenue' =
+			DIVIDE (
+			    COUNTROWS ( FILTER ( markdown_effect, markdown_effect[adjusted_revenue_change] >= 1 ) ),
+			    [Markdowns Analysed]
+			)
+		formatString: 0%
+		displayFolder: Measures
+		lineageTag: 872ad375-40b1-451e-91af-2aa623fae777
+
+	column article_id
+		dataType: string
+		lineageTag: 2cdd3814-066b-46db-b070-9d26bea45108
+		summarizeBy: none
+		sourceColumn: article_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_type_name
+		dataType: string
+		lineageTag: 254c793c-5eeb-41d7-a170-2648261c3c96
+		summarizeBy: none
+		sourceColumn: product_type_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_group_name
+		dataType: string
+		lineageTag: a2840cd9-ea14-4c99-9659-e6c2564fd450
+		summarizeBy: none
+		sourceColumn: product_group_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column index_group_name
+		dataType: string
+		lineageTag: 7faf3b90-62a8-449e-8b77-00014d546590
+		summarizeBy: none
+		sourceColumn: index_group_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column garment_group_name
+		dataType: string
+		lineageTag: 808874fe-f121-44b4-a4e9-9f878c3331b6
+		summarizeBy: none
+		sourceColumn: garment_group_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column launch_week
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 6f0f305e-ad25-499f-8edf-3ea8d8b68f74
+		summarizeBy: none
+		sourceColumn: launch_week
+
+		variation Variation
+			isDefault
+			relationship: eeedfc12-8baa-45e9-b70a-fff9a36a1255
+			defaultHierarchy: LocalDateTable_a6f1c776-71b9-4672-8a6a-2c32f63bb021.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column markdown_week
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: dff4d167-62b8-480f-9858-378cd6a55665
+		summarizeBy: none
+		sourceColumn: markdown_week
+
+		variation Variation
+			isDefault
+			relationship: 0ea9cca5-e3dd-420d-8d3b-fa594ec0166a
+			defaultHierarchy: LocalDateTable_4e39d805-b21a-4b00-9101-39e95f17a19d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column weeks_to_markdown
+		dataType: int64
+		formatString: 0
+		lineageTag: ac83dbe2-220d-4d5c-b2a8-670a9ef89b3d
+		summarizeBy: sum
+		sourceColumn: weeks_to_markdown
+
+		annotation SummarizationSetBy = Automatic
+
+	column markdown_depth
+		dataType: double
+		formatString: 0%
+		lineageTag: 1e144afb-2f68-4e2d-b4da-4390ea843f3e
+		summarizeBy: none
+		sourceColumn: markdown_depth
+
+		annotation SummarizationSetBy = User
+
+	column depth_band
+		dataType: string
+		lineageTag: 3c74a4a1-6575-4da2-a4bc-b9d84a18a410
+		summarizeBy: none
+		sourceColumn: depth_band
+
+		annotation SummarizationSetBy = Automatic
+
+	column units_before_wk
+		dataType: double
+		lineageTag: cf9bb007-1e70-48a7-9d7d-0fb02d0406f5
+		summarizeBy: sum
+		sourceColumn: units_before_wk
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column units_after_wk
+		dataType: double
+		lineageTag: 43f6e84f-f409-43d0-8d5c-ad01c09c84f8
+		summarizeBy: sum
+		sourceColumn: units_after_wk
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column raw_unit_lift
+		dataType: double
+		formatString: "0.0""x"""
+		lineageTag: 50b3004c-e65f-499e-8b0d-c2f2e79c866a
+		summarizeBy: none
+		sourceColumn: raw_unit_lift
+
+		annotation SummarizationSetBy = User
+
+	column peer_unit_change
+		dataType: double
+		formatString: "0.0""x"""
+		lineageTag: a14ffdd7-ffb0-432a-b50c-95211736ba18
+		summarizeBy: none
+		sourceColumn: peer_unit_change
+
+		annotation SummarizationSetBy = User
+
+	column adjusted_unit_lift
+		dataType: double
+		formatString: "0.0""x"""
+		lineageTag: d9551bdf-fc00-4ea9-86c4-6510fb5a86e3
+		summarizeBy: none
+		sourceColumn: adjusted_unit_lift
+
+		annotation SummarizationSetBy = User
+
+	column adjusted_revenue_change
+		dataType: double
+		formatString: 0.00
+		lineageTag: 544308f1-1294-4132-bd52-5fcc6289dbb7
+		summarizeBy: none
+		sourceColumn: adjusted_revenue_change
+
+		annotation SummarizationSetBy = User
+
+	column peer_units_before
+		dataType: int64
+		formatString: 0
+		lineageTag: d935674e-4681-46fa-a1f7-8863f7aa7d7f
+		summarizeBy: sum
+		sourceColumn: peer_units_before
+
+		annotation SummarizationSetBy = Automatic
+
+	partition markdown_effect = m
+		mode: import
+		source =
+				let
+				    Source = GoogleBigQuery.Database([Implementation="2.0"]),
+				    #"data-portfolio-509915_Database" = Source{[Name="data-portfolio-509915",Kind="Database"]}[Data],
+				    hm_Schema = #"data-portfolio-509915_Database"{[Name="hm",Kind="Schema"]}[Data],
+				    markdown_effect_Table = hm_Schema{[Name="markdown_effect",Kind="Table"]}[Data]
+				in
+				    markdown_effect_Table
+
+	annotation PBI_ResultType = Table
+

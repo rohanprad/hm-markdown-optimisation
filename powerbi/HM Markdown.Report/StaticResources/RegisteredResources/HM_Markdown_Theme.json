@@ -1,0 +1,464 @@
+{
+  "name": "H&M Markdown",
+  "dataColors": [
+    "#111111",
+    "#E50010",
+    "#5C5C5C",
+    "#B3000C",
+    "#8A8A8A",
+    "#F28B91",
+    "#333333",
+    "#D9D9D9"
+  ],
+  "foreground": "#111111",
+  "foregroundNeutralSecondary": "#5F6368",
+  "foregroundNeutralTertiary": "#9AA0A6",
+  "background": "#FFFFFF",
+  "backgroundLight": "#F5F5F7",
+  "backgroundNeutral": "#D9D9D9",
+  "tableAccent": "#E50010",
+  "accent": "#E50010",
+  "good": "#1E7D3A",
+  "neutral": "#8A8A8A",
+  "bad": "#E50010",
+  "maximum": "#1E7D3A",
+  "center": "#FFFFFF",
+  "minimum": "#E50010",
+  "textClasses": {
+    "callout": {
+      "fontSize": 26,
+      "fontFace": "DIN",
+      "color": "#111111"
+    },
+    "title": {
+      "fontSize": 12,
+      "fontFace": "DIN",
+      "color": "#111111"
+    },
+    "header": {
+      "fontSize": 11,
+      "fontFace": "DIN",
+      "color": "#111111"
+    },
+    "label": {
+      "fontSize": 10,
+      "fontFace": "DIN",
+      "color": "#5F6368"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#ECECEC"
+              }
+            },
+            "radius": 12,
+            "width": 1
+          }
+        ],
+        "dropShadow": [
+          {
+            "show": true,
+            "preset": "Custom",
+            "color": {
+              "solid": {
+                "color": "#000000"
+              }
+            },
+            "angle": 90,
+            "shadowDistance": 2,
+            "shadowBlur": 10,
+            "shadowSpread": 0,
+            "transparency": 90
+          }
+        ],
+        "subTitle": [
+          {
+            "show": false
+          }
+        ],
+        "title": [
+          {
+            "show": true,
+            "fontColor": {
+              "solid": {
+                "color": "#111111"
+              }
+            },
+            "fontSize": 12,
+            "fontFamily": "'DIN', wf_standard-font, helvetica, arial, sans-serif",
+            "bold": true
+          }
+        ],
+        "padding": [
+          {
+            "left": 18,
+            "top": 16,
+            "right": 18,
+            "bottom": 14
+          }
+        ],
+        "categoryAxis": [
+          {
+            "gridlineColor": {
+              "solid": {
+                "color": "#F1F1F1"
+              }
+            },
+            "labelColor": {
+              "solid": {
+                "color": "#5F6368"
+              }
+            },
+            "fontFamily": "'DIN', wf_standard-font, helvetica, arial, sans-serif"
+          }
+        ],
+        "labels": [
+          {
+            "fontFamily": "'DIN', wf_standard-font, helvetica, arial, sans-serif"
+          }
+        ],
+        "valueAxis": [
+          {
+            "gridlineColor": {
+              "solid": {
+                "color": "#F1F1F1"
+              }
+            },
+            "labelColor": {
+              "solid": {
+                "color": "#5F6368"
+              }
+            },
+            "fontFamily": "'DIN', wf_standard-font, helvetica, arial, sans-serif"
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#F5F5F7"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "outspace": [
+          {
+            "color": {
+              "solid": {
+                "color": "#F5F5F7"
+              }
+            },
+            "transparency": 0
+          }
+        ]
+      }
+    },
+    "textbox": {
+      "*": {
+        "background": [
+          {
+            "show": false
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ],
+        "dropShadow": [
+          {
+            "show": false
+          }
+        ],
+        "title": [
+          {
+            "show": false
+          }
+        ],
+        "padding": [
+          {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          }
+        ]
+      }
+    },
+    "slicer": {
+      "*": {
+        "background": [
+          {
+            "show": false
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ],
+        "dropShadow": [
+          {
+            "show": false
+          }
+        ],
+        "title": [
+          {
+            "show": false
+          }
+        ],
+        "header": [
+          {
+            "show": true,
+            "fontColor": {
+              "solid": {
+                "color": "#5F6368"
+              }
+            },
+            "textSize": 9,
+            "fontFamily": "'DIN', wf_standard-font, helvetica, arial, sans-serif"
+          }
+        ],
+        "items": [
+          {
+            "fontFamily": "'DIN', wf_standard-font, helvetica, arial, sans-serif",
+            "fontColor": {
+              "solid": {
+                "color": "#111111"
+              }
+            },
+            "textSize": 10
+          }
+        ]
+      }
+    },
+    "cardVisual": {
+      "*": {
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#ECECEC"
+              }
+            },
+            "radius": 12,
+            "width": 1
+          }
+        ],
+        "dropShadow": [
+          {
+            "show": true,
+            "preset": "Custom",
+            "color": {
+              "solid": {
+                "color": "#000000"
+              }
+            },
+            "angle": 90,
+            "shadowDistance": 2,
+            "shadowBlur": 10,
+            "shadowSpread": 0,
+            "transparency": 90
+          }
+        ],
+        "subTitle": [
+          {
+            "show": false
+          }
+        ],
+        "title": [
+          {
+            "show": false
+          }
+        ],
+        "padding": [
+          {
+            "left": 18,
+            "top": 16,
+            "right": 18,
+            "bottom": 14
+          }
+        ],
+        "outline": [
+          {
+            "$id": "default",
+            "show": false
+          }
+        ],
+        "label": [
+          {
+            "$id": "default",
+            "position": "aboveValue",
+            "fontSize": 11,
+            "fontFamily": "'DIN', wf_standard-font, helvetica, arial, sans-serif",
+            "fontColor": {
+              "solid": {
+                "color": "#5F6368"
+              }
+            }
+          }
+        ],
+        "value": [
+          {
+            "$id": "default",
+            "fontSize": 26,
+            "fontFamily": "'DIN', wf_standard-font, helvetica, arial, sans-serif",
+            "fontColor": {
+              "solid": {
+                "color": "#111111"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "pageNavigator": {
+      "*": {
+        "background": [
+          {
+            "show": false
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ],
+        "dropShadow": [
+          {
+            "show": false
+          }
+        ],
+        "title": [
+          {
+            "show": false
+          }
+        ],
+        "text": [
+          {
+            "$id": "default",
+            "fontSize": 11,
+            "fontFamily": "'DIN', wf_standard-font, helvetica, arial, sans-serif",
+            "fontColor": {
+              "solid": {
+                "color": "#C8C8C8"
+              }
+            },
+            "alignment": "left",
+            "leftMargin": 14
+          },
+          {
+            "$id": "hover",
+            "fontColor": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            }
+          },
+          {
+            "$id": "selected",
+            "fontColor": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "bold": true
+          }
+        ],
+        "fill": [
+          {
+            "show": true
+          },
+          {
+            "$id": "default",
+            "fillColor": {
+              "solid": {
+                "color": "#111111"
+              }
+            },
+            "transparency": 0
+          },
+          {
+            "$id": "hover",
+            "fillColor": {
+              "solid": {
+                "color": "#2A2A2A"
+              }
+            },
+            "transparency": 0
+          },
+          {
+            "$id": "press",
+            "fillColor": {
+              "solid": {
+                "color": "#2A2A2A"
+              }
+            },
+            "transparency": 0
+          },
+          {
+            "$id": "selected",
+            "fillColor": {
+              "solid": {
+                "color": "#E50010"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "outline": [
+          {
+            "show": false
+          }
+        ],
+        "shape": [
+          {
+            "$id": "default",
+            "tileShape": "rectangle",
+            "roundEdge": 8
+          }
+        ],
+        "layout": [
+          {
+            "orientation": 1,
+            "cellPadding": 6
+          }
+        ]
+      }
+    }
+  }
+}

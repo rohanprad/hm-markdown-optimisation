@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "kpiAnalysed",
+  "position": {
+    "x": 222,
+    "y": 96,
+    "z": 9000,
+    "height": 100,
+    "width": 335,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "markdown_effect"
+                    }
+                  },
+                  "Property": "Markdowns Analysed"
+                }
+              },
+              "queryRef": "markdown_effect.Markdowns Analysed",
+              "nativeQueryRef": "Markdowns Analysed",
+              "displayName": "Markdowns analysed"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Number of past markdowns analysed.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

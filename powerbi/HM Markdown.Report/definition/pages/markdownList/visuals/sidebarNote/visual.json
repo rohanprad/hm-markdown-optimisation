@@ -1,0 +1,161 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "sidebarNote",
+  "position": {
+    "x": 18,
+    "y": 556,
+    "z": 5000,
+    "height": 156,
+    "width": 168,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "DATA AS OF",
+                    "textStyle": {
+                      "fontFamily": "DIN",
+                      "fontSize": "7pt",
+                      "color": "#8A8A8A",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Week of 16 Sep 2020",
+                    "textStyle": {
+                      "fontFamily": "DIN",
+                      "fontSize": "10pt",
+                      "color": "#FFFFFF",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontFamily": "DIN",
+                      "fontSize": "5pt",
+                      "color": "#111111"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "SOURCE",
+                    "textStyle": {
+                      "fontFamily": "DIN",
+                      "fontSize": "7pt",
+                      "color": "#8A8A8A",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "H&M transactions via Kaggle",
+                    "textStyle": {
+                      "fontFamily": "DIN",
+                      "fontSize": "8pt",
+                      "color": "#C8C8C8"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Prices anonymised",
+                    "textStyle": {
+                      "fontFamily": "DIN",
+                      "fontSize": "8pt",
+                      "color": "#C8C8C8"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontFamily": "DIN",
+                      "fontSize": "5pt",
+                      "color": "#111111"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Personal, non-commercial project.",
+                    "textStyle": {
+                      "fontFamily": "DIN",
+                      "fontSize": "7pt",
+                      "color": "#8A8A8A"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Not affiliated with or endorsed by H&M.",
+                    "textStyle": {
+                      "fontFamily": "DIN",
+                      "fontSize": "7pt",
+                      "color": "#8A8A8A"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "H&M name and logo are trademarks",
+                    "textStyle": {
+                      "fontFamily": "DIN",
+                      "fontSize": "7pt",
+                      "color": "#8A8A8A"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "of H & M Hennes & Mauritz AB.",
+                    "textStyle": {
+                      "fontFamily": "DIN",
+                      "fontSize": "7pt",
+                      "color": "#8A8A8A"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

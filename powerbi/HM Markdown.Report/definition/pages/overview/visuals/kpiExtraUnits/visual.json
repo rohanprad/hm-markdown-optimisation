@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "kpiExtraUnits",
+  "position": {
+    "x": 1011,
+    "y": 96,
+    "z": 12000,
+    "height": 100,
+    "width": 247,
+    "tabOrder": 12000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "markdown_candidates"
+                    }
+                  },
+                  "Property": "Expected Extra Units (4 wks)"
+                }
+              },
+              "queryRef": "markdown_candidates.Expected Extra Units (4 wks)",
+              "nativeQueryRef": "Expected Extra Units (4 wks)",
+              "displayName": "Extra units in 4 weeks"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Extra units expected over 4 weeks if candidates are marked down at the suggested depth.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "kpiLift",
+  "position": {
+    "x": 924,
+    "y": 96,
+    "z": 11000,
+    "height": 100,
+    "width": 335,
+    "tabOrder": 11000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "markdown_effect"
+                    }
+                  },
+                  "Property": "Median Unit Lift"
+                }
+              },
+              "queryRef": "markdown_effect.Median Unit Lift",
+              "nativeQueryRef": "Median Unit Lift",
+              "displayName": "Median unit sales lift"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Median unit sales lift after markdown compared with similar full-price products.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

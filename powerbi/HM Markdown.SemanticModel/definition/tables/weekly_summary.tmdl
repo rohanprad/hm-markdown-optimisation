@@ -1,0 +1,76 @@
+table weekly_summary
+	lineageTag: 26b96240-3131-4f78-b2d4-86f5286fe6bd
+
+	measure '% Units Marked Down' =
+			DIVIDE (
+			    CALCULATE ( SUM ( weekly_summary[units] ), weekly_summary[price_status] = "Marked down" ),
+			    CALCULATE ( SUM ( weekly_summary[units] ), weekly_summary[price_status] <> "Launched before data" )
+			)
+		formatString: 0%
+		displayFolder: Measures
+		lineageTag: f95c43c0-8846-40c7-b5df-6c4b9c40e43f
+
+	column week_start
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 23e9cbfa-e7fd-4eb7-888b-0b6e92fc9b26
+		summarizeBy: none
+		sourceColumn: week_start
+
+		variation Variation
+			isDefault
+			relationship: 23030901-df10-4f63-a678-5f8b7ffd7a4a
+			defaultHierarchy: LocalDateTable_d15cd186-c973-469e-af3a-58ea3b57a77a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column index_group_name
+		dataType: string
+		lineageTag: 16198daf-ec92-4049-85a8-5fa4732eaa0d
+		summarizeBy: none
+		sourceColumn: index_group_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_status
+		dataType: string
+		lineageTag: 17d6253d-78cc-4ba8-8a46-a0742b749ff5
+		summarizeBy: none
+		sourceColumn: price_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column units
+		dataType: int64
+		formatString: 0
+		lineageTag: bd2f04c7-ba11-4bf9-b286-680459d8f651
+		summarizeBy: sum
+		sourceColumn: units
+
+		annotation SummarizationSetBy = Automatic
+
+	column revenue
+		dataType: double
+		lineageTag: 72057c96-24a8-4b94-85ea-80ad341f0672
+		summarizeBy: sum
+		sourceColumn: revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition weekly_summary = m
+		mode: import
+		source =
+				let
+				    Source = GoogleBigQuery.Database([Implementation="2.0"]),
+				    #"data-portfolio-509915_Database" = Source{[Name="data-portfolio-509915",Kind="Database"]}[Data],
+				    hm_Schema = #"data-portfolio-509915_Database"{[Name="hm",Kind="Schema"]}[Data],
+				    weekly_summary_Table = hm_Schema{[Name="weekly_summary",Kind="Table"]}[Data]
+				in
+				    weekly_summary_Table
+
+	annotation PBI_ResultType = Table
+
