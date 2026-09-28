@@ -59,11 +59,11 @@ merchandising team that reviews this weekly and needs filters, not code.
 
 - [Technical notes](docs/technical_notes.md): data, limitations, pipeline, key decisions, full findings, caveats, how to reproduce
 - [SQL](sql/): the six analysis steps, each commented
-- [Power BI build guide](docs/powerbi_build_guide.md): data model and every DAX measure
+- [Dashboard notes](docs/dashboard_notes.md): data model, every DAX measure and design choices
 
 ---
 
-**Rohan Pradhan** · Data Analyst · [LinkedIn](https://linkedin.com/in/rohanprad)
+**Rohan Pradhan** · Data Analyst · [Portfolio](https://rohanprad.github.io) · [LinkedIn](https://linkedin.com/in/rohanprad)
 
 *Data: H&M Group via Kaggle, used for non-commercial portfolio purposes. Personal
 project, not affiliated with or endorsed by H&M. The H&M name and logo are

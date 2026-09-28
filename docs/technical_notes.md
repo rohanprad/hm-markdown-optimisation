@@ -103,4 +103,4 @@ December–January (~35%), and is lowest in September (13%).
 4. In the BigQuery console, run `sql/01` to `sql/06` in order, replacing
    `data-portfolio-509915` with your project ID.
 5. Open `powerbi/HM Markdown.pbip` in Power BI Desktop, point the BigQuery source
-   at your project, and refresh. See [powerbi_build_guide.md](powerbi_build_guide.md).
+   at your project, and refresh. See [dashboard_notes.md](dashboard_notes.md).
